@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Event</title>
+<style>
+    .absolute.paragraph {
+        position: absolute;
+        top: 300px;
+        left: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .absolute.image {
+        position: absolute;
+        top: 47px;
+        left: 113px;
+
+    }
+    .relative.full {
+        width: 1330px;
+        height: 463px;
+        position: relative;
+        background: pink;
+    }
+    .absolute.moveLeft {
+        position: absolute;
+        top: 338px;
+        left: 64px;
+    }
+    .absolute.moveRight {
+        position: absolute;
+        top: 338px;
+        left: 202px;
+    }
+</style>
+</head>
+<script>
+//B1: Tao giao dien HTML
+//B2: Click vao Image de dich chuyen Image sang ben phai
+//B3: Thiet lap function de chay
+//B4: Lam dep
+</script>
+<body>
+<div class=" relative full">
+    <div class="absolute image"><img id="myImage" src="girlVN.jpg" style="width: 150px"/></div>
+    <div class="absolute paragraph" ><span>Click button below to move the image to right</span></div>
+    <div class="absolute moveLeft" ><button type="button"value="Click Me"onclick="moveLeft();" />Click to Move Left!</div>
+    <div class="absolute moveRight" ><button type="button"value="Click Me"onclick="moveRight();" />Click to Move Right!</div>
+
+</div>
+<script>
+    let imgObj = null;
+        imgObj = document.getElementById('myImage');
+    function init() {
+        imgObj = document.getElementById('myImage');
+        imgObj.style.position = 'relative';
+        imgObj.style.left ='10px';
+        }
+    function moveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 30 + 'px';
+    }
+    function moveLeft() {
+        imgObj.style.left = parseInt(imgObj.style.left) - 30 + 'px';
+    }
+    window.onload = init;
+</script>
+</body>
+</html>
