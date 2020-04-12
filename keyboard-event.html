@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện bàn phím</title>
+<style>
+    .relative {
+        position: relative;
+        width: 1330px;
+        height: 400px;
+        margin: 53px;
+        background: pink;
+    }
+
+</style>
+</head>
+<script>
+//B1: Xay dung giao dien HTML
+//B2: Dua image vao HTML
+//B3: Xay dung cac phim di chuyen
+//B4: Khoi chay voi docReady
+//B5: Lam dep
+</script>
+<body onload="docReady()">
+<div class="relative"/>
+<div class="absolute" ><img id="nobita" src="nobita.jpg" style="position: absolute;left: 0; top: 0" height="200" width="180" /></div>
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) -5 + 'px';
+    }
+    function downArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) +5 + 'px';
+     }
+     function leftArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) -5 + 'px';
+     }
+      function rightArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) +5 + 'px';
+      }
+      function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+             case 38:
+                 upArrowPressed();
+                 break;
+             case 40:
+                 downArrowPressed();
+                 break;
+        }
+      }
+      function docReady() {
+        window.addEventListener('keydown', moveSelection);
+      }
+</script>
+</body>
+</html>
